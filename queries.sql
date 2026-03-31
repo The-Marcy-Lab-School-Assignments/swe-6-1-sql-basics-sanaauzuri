@@ -16,20 +16,20 @@
 -- ============================================================
 
 -- 1. Select all columns from all books.
-
+SELECT * FROM books;
 
 -- 2. Select only the title and author for all books.
-
+SELECT title, author FROM books;
 
 -- 3. Select the title, author, and rating for all books.
-
+SELECT title, author, rating FROM books;
 
 -- ============================================================
 -- Part 2: WHERE — Filtering Data
 -- ============================================================
 
 -- 4. Select all books in the 'sci-fi' genre.
-
+SELECT * FROM books WHERE genre = 'sci-fi';
 
 -- 5. Select all books published after the year 2000.
 
