@@ -57,26 +57,33 @@ SELECT * FROM books WHERE genre = 'fantasy' OR genre = 'mystery';
 -- ============================================================
 
 -- 12. Select all books, ordered by rating from highest to lowest.
-
+SELECT * FROM books ORDER BY rating DESC;
 
 -- 13. Select all books, ordered by year from oldest to newest.
-
+SELECT * FROM books ORDER BY year ASC;
 
 -- 14. Select the 5 highest-rated books.
-
+SELECT * FROM books ORDER BY rating DESC LIMIT 5;
 
 -- 15. Select the 3 most recently published books.
-
+SELECT * FROM books ORDER BY year DESC LIMIT 3;
 
 -- 16. Select all 'fiction' books, ordered by year from oldest to newest.
-
+SELECT * FROM books
+WHERE genre = 'fiction'
+ORDER BY year ASC;
 
 -- 17. Select all available books with a rating of 9.0 or higher,
 --     ordered by rating from highest to lowest.
-
+SELECT * FROM books
+WHERE available = true 
+AND rating >= 9.0
+ORDER BY rating DESC;
 
 -- 18. Select the title and genre of the 3 oldest books.
-
+SELECT title, genre FROM books
+ORDER BY year ASC
+LIMIT 3;
 
 -- ============================================================
 -- Part 4: INSERT — Creating Data
@@ -85,10 +92,11 @@ SELECT * FROM books WHERE genre = 'fantasy' OR genre = 'mystery';
 -- 19. Insert a new book of your choice into the books table.
 --     Include: title, author, genre, year, rating.
 --     (available defaults to TRUE if not provided)
-
+INSERT INTO books (title, author, genre, year, rating)
+VALUES ('Holes', 'Louis Sachar', 'mystery', 1998, 10);
 
 -- 20. Select all books to verify your insert.
-
+SELECT * FROM books;
 
 -- ============================================================
 -- Part 5: UPDATE — Modifying Data
@@ -96,16 +104,21 @@ SELECT * FROM books WHERE genre = 'fantasy' OR genre = 'mystery';
 
 -- 21. Mark the book you inserted in #19 as unavailable.
 --     Use its book_id to target it specifically.
-
+UPDATE books
+SET available = false
+WHERE title = 'Holes';
 
 -- 22. Update the rating of 'Project Hail Mary' to 9.7.
-
+UPDATE books
+SET rating = 9.7
+WHERE title = 'Project Hail Mary';
 
 -- ============================================================
 -- Part 6: DELETE — Removing Data
 -- ============================================================
 
 -- 23. Delete the book with book_id = 5.
-
+DELETE FROM books WHERE book_id = 5;
 
 -- 24. Select all books to verify the deletion.
+SELECT * FROM books
