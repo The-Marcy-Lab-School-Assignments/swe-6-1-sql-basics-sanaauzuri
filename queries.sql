@@ -32,25 +32,25 @@ SELECT title, author, rating FROM books;
 SELECT * FROM books WHERE genre = 'sci-fi';
 
 -- 5. Select all books published after the year 2000.
-
+SELECT * FROM books WHERE year > 2000;
 
 -- 6. Select all books with a rating of 9.0 or higher.
-
+SELECT * FROM books WHERE rating > 9.0;
 
 -- 7. Select all books that are currently available.
-
+SELECT * FROM books WHERE available = true;
 
 -- 8. Select all books that are currently unavailable.
-
+SELECT * FROM books WHERE available = false;
 
 -- 9. Select all books published before 1970.
-
+SELECT * FROM books WHERE year < 1970;
 
 -- 10. Select all 'sci-fi' books with a rating above 9.4.
-
+SELECT * FROM books WHERE genre = 'sci-fi' AND rating > 9.4;
 
 -- 11. Select all books in the 'fantasy' or 'mystery' genre.
-
+SELECT * FROM books WHERE genre = 'fantasy' OR genre = 'mystery';
 
 -- ============================================================
 -- Part 3: ORDER BY & LIMIT — Sorting and Slicing
