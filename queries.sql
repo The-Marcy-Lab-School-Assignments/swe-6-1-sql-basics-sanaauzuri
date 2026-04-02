@@ -106,7 +106,7 @@ SELECT * FROM books;
 --     Use its book_id to target it specifically.
 UPDATE books
 SET available = false
-WHERE title = 'Holes';
+WHERE book_id = 13;
 
 -- 22. Update the rating of 'Project Hail Mary' to 9.7.
 UPDATE books
@@ -121,4 +121,4 @@ WHERE title = 'Project Hail Mary';
 DELETE FROM books WHERE book_id = 5;
 
 -- 24. Select all books to verify the deletion.
-SELECT * FROM books
+SELECT * FROM books;
